@@ -1,0 +1,24 @@
+
+---
+  - name: play for install nginx on webserver
+    hosts: web
+    gather_facts: yes
+    tasks:
+       - name: Run Apt Update
+         shell: apt-get update 
+       - name: install Nginx server
+         apt: 
+          name: nginx
+          state: present
+       - name: restart nginx server
+         command: service nginx restart
+       
+
+        
+
+      
+      
+        
+
+
+
