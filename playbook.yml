@@ -12,7 +12,30 @@
           state: present
        - name: restart nginx server
          command: service nginx restart
-       
+       - name : copy the files to index  destination folder.
+         copy: 
+           src: /tmp/dockertest1/index.html
+           dest: /var/www/html/index.nginx-debian.html
+           owner: root
+           group: root
+           mode: 0644
+       - name :  copy the style files to index  destination folder.
+         copy: 
+           src: /tmp/dockertest1/style.css
+           dest: /var/www/style.css
+           owner: root
+           group: root
+           mode: 0644
+       - name :  copy the java scripts files to index  destination folder.
+         copy: 
+           src: /tmp/dockertest1/scorekeeper.js
+           dest: /var/www/html/scorekeeper.js
+           owner: root
+           group: root
+           mode: 0644
+        
+        
+
 
         
 
