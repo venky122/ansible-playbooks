@@ -10,8 +10,7 @@
          apt: 
           name: nginx
           state: present
-       - name: restart nginx server
-         command: service nginx restart
+       
        - name : copy the files to index  destination folder.
          copy: 
            src: /tmp/dockertest1/index.html
@@ -33,6 +32,8 @@
            owner: root
            group: root
            mode: 0644
+       - name: restart nginx server
+         command: service nginx restart
         
         
 
